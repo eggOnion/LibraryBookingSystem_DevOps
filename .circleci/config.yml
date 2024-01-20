@@ -1,0 +1,242 @@
+version: 2.1
+
+# orb provides a predfined configurations for a specific environment; java, maven & docker for our case
+orbs:
+  # maven: circleci/maven@1.4.1
+  # java-build: expi/java-build@1.0.0
+  docker: circleci/docker@2.4.0
+  snyk: snyk/snyk@1.5.0
+
+# This job uses a Docker image: "cimg/openjdk:17.0.7" to build a Spring Boot application. 
+jobs:
+  # build:
+  #   docker:
+  #     - image: cimg/openjdk:17.0.7           
+  #   steps:
+  #     - checkout
+  #     - run: 
+  #         name: Building Image...
+  #         command: mvn clean package -DskipTests=true
+
+
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:17.0.7
+      - image: cimg/postgres:13.13
+        environment:
+          POSTGRES_URL: ${POSTGRES_URL}
+          POSTGRES_USER: ${DB_USERNAME}
+          POSTGRES_PASSWORD: ${DB_PASSWORD}
+          POSTGRES_DB: d624huihau29c9
+    steps:
+      - checkout
+      - run: 
+          name: Wait for db to run
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: 
+          name: Run Unit Test & Clean Install
+          command: mvn clean install
+
+  scan:
+    docker:
+      - image: cimg/openjdk:17.0.7
+    steps:
+      - setup_remote_docker
+      - checkout
+      # Build the Docker image
+      - run:
+          name: Build Docker Image on DockerHub
+          command: docker build -t $DOCKERHUB_USERNAME/simple-library:latest .
+      # Login to Docker Hub using environment variables
+      - run: 
+          name: Login to Docker using Token
+          command: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
+      # Push the image to Docker Hub
+      - run: 
+          name: Push Docker Image
+          command: docker push $DOCKERHUB_USERNAME/simple-library:latest
+      # Run Snyk scan on the Docker image
+      - snyk/scan:
+          docker-image-name: $DOCKERHUB_USERNAME/simple-library:latest
+          severity-threshold: critical   
+
+
+    # steps:
+    #   - checkout
+      # - setup_remote_docker
+      # - run:
+      #     name: Login to Docker Hub
+      #     command: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
+      # - run: 
+      #     name: Create Database
+      #     command: |
+      #       dockerize -wait tcp://localhost:5432 -timeout 1m
+          # psql -h localhost -U myuser -d postgres -c "CREATE DATABASE simple_library;"
+           
+      # - run:
+      #     name: Install Dockerize
+      #     command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+      #     environment:
+      #       DOCKERIZE_VERSION: v0.6.1
+      # - run:
+      #     name: Setting up Db
+      #     command: |
+      #       dockerize -wait tcp://localhost:5432 -timeout 1m   
+      #       sudo apt-get update
+      #       sudo apt-get install -y postgresql-client    
+      #       psql -U postgres -c "CREATE DATABASE simple_library;"         
+        
+
+           
+  # build-and-test:   
+  #   docker:
+  #     - image: cimg/openjdk:17.0
+  #   steps:
+  #     ## This checkout command fetch the source code once the commit is executed on Github.
+  #     ## It then continue to installs npm packages, and runs the npm install command.
+  #     - checkout      
+  #     # Restore the Maven dependencies cache
+  #     - restore_cache:
+  #         keys:
+  #           - v1-dependencies-{{ checksum "pom.xml" }}
+
+  #     # Install Maven dependencies
+  #     - run:
+  #         name: Install Dependencies...
+  #         command: |
+  #           mvn dependency:go-offline
+  #           sudo apt-get update
+  #           sudo apt-get install -y postgresql-client
+            
+  #     # Save the Maven dependencies cache
+  #     - save_cache:
+  #         paths:
+  #           - ~/.m2
+  #         key: v1-dependencies-{{ checksum "pom.xml" }}
+
+  #     - run:
+  #         name: Build Spring Boot
+  #         command: mvn -B -DskipTests clean package     
+      
+  #     - run:
+  #         name: Run Unit Testing...
+  #         command: mvn test       
+
+  # test:
+  #   docker:
+  #     - image: cimg/openjdk:17.0
+  #   steps:
+  #     - checkout     
+
+  #     # Your other build steps go here, for example, running tests or packaging the application
+  #     - run:
+  #         name: Run Unit Testing...
+  #         command: mvn test
+  
+  
+  # scan:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   # environment:
+  #   #   IMAGE_NAME: $DOCKERHUB_USERNAME/education-space
+  #   steps:
+  #     - checkout
+  #     - setup_remote_docker
+  #     # - run:
+  #     #     name: Login to Docker Hub
+  #     #     command: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
+  #     - run: 
+  #         name: Build Docker Image
+  #         command: docker build -t $DOCKERHUB_USERNAME/education-space:v1 .
+  #     - snyk/scan:
+  #         docker-image-name: $DOCKERHUB_USERNAME/education-space:v1   
+  # optional_publish:
+  #     # Assignments
+
+  # Specify your tag pattern using wildcards
+  # curl -X POST https://https://app.circleci.com/pipelines/github/${DOCKERHUB_USERNAME}/6m-software-m4-node-app-for-devops/128/workflows/${CIRCLE_WORKFLOW_ID}/cancel -H 'Accept: application/json' -u '${CIRCLE_TOKEN}:'
+  # semantic-version-check:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   steps:
+  #     - checkout   
+  #     - run:
+  #         name: Check for Semantic Versioning
+  #         command: |
+  #           TAG_PATTERN="v3.3.3"  
+  #           if git tag -l $TAG_PATTERN 2>/dev/null; then
+  #             echo "Git tag matching pattern found. Proceeding with the build..."         
+  #           else
+  #             echo "No Git tag matching pattern found. Exiting..."
+  #             circleci step halt 
+  #             exit 0          
+  #           fi                
+  #     - run:
+  #         name: Semantic version check completed!  
+  #         command: echo "Check completed! Procceing to build-and-push"      
+  
+
+  # build-and-push:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   steps:
+  #     - checkout            
+  #     - setup_remote_docker      
+  #     - run:
+  #         name: Log in to Docker Hub
+  #         command: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin        
+  #     - run:
+  #         name: Build and Push Docker Image.
+  #         command: |
+  #           docker build -t $DOCKERHUB_USERNAME/build-and-push:latest_v2 .
+  #           docker push $DOCKERHUB_USERNAME/build-and-push:latest_v2
+    
+  # deploy-to-Heroku:
+  #   docker:
+  #     - image: cimg/node:16.10
+  #   steps:
+  #     - checkout     
+  #     - run: 
+  #         name: Deploying to Heroku
+  #         command: echo "Deploying to Heroku..."
+
+# workflows: simple_workflow  -> *the name of the workflow
+# This workflow consists of two jobs: build and test. 
+# The test job "requires" the build job to complete successfully before it can run. 
+# This represents a basic CI/CD workflow where the application is built and tested.
+workflows: 
+  ci_flow:    
+    jobs:
+      - build-and-test:
+          filters: 
+            branches:     
+              only:
+                - develop      # build the ci pipeline only when git push to main branch            
+
+      - scan:
+          requires:
+            - build-and-test
+
+      # - scan:
+      #     requires:
+      #       - test
+      # - semantic-version-check:
+      #     requires:
+      #       - test
+      #     filters:
+      #       tags:
+      #         only: /.*/     # enfore git tag to match this version
+      #           # ^v10\.0\.0/     
+      #           #- /.*/                  
+      # - build-and-push:
+      #     requires:
+      #       - semantic-version-check          
+      # - deploy-to-Heroku:
+      #     requires:
+      #       - scan
+
+
+
+# In summary, this CircleCI configuration defines a basic workflow for a Node.js application, involving 
+# building and testing using Docker images. The success of the workflow depends on the successful completion 
+# of the build job before the test job can run.

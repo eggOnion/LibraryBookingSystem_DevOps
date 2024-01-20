@@ -1,0 +1,84 @@
+package com.example.librarybookingsystem.serviceimpls;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.example.librarybookingsystem.entities.Learner;
+import com.example.librarybookingsystem.exceptions.LearnerNotFoundException;
+import com.example.librarybookingsystem.repositories.LearnerRepository;
+
+// This annotation is used to tell JUnit to bootstrap the Spring context. 
+// This allows us to inject beans as needed.
+@SpringBootTest
+public class LearnerServiceImplTest {
+
+    // Mock the LearnerRepository.
+    // This annotation tell Mockito to create a mock object for the LearnerRepository class.
+    @Mock
+    private LearnerRepository learnerRepository;
+
+    // This annotation tell Mockito to inject the mock object into the LearnerServiceImpl class.
+    @InjectMocks // Inject the mocks as dependencies into LearnerServiceImpl
+    LearnerServiceImpl learnerServiceImpl;
+
+    @Test
+    public void createLearnerTest() {
+
+        // 1. SETUP
+        // Create a new Learner
+        Learner learner = Learner.builder().firstName("Bowery").lastName("King").email("boweryking@continental.com")
+                .contact_num("12345678").build();
+
+        // Mock the save method of the Learner repository
+        when((learnerRepository.save(learner))).thenReturn(learner);
+
+        // 2. EXECUTE
+        // Call the method that we want to test
+        Learner savedLearner = learnerServiceImpl.createLearner(learner);
+
+        // 3. ASSERT
+        // Compare the actual result with the expected result
+        // Learner unexpectedLearner = Learner.builder().firstName("").lastName("").email("unexpected@continental.com")
+        //     .contact_num("87654321").build();
+        assertEquals(learner, savedLearner, "The saved Learner should be the same as the new Learner");
+
+        // Also verify that the save method of the Learner repository is called once
+        verify(learnerRepository, times(1)).save(learner);
+    }
+
+    @Test
+    public void getLearnerTest() {
+        // 1. SETUP
+        // Create a new learner
+        Learner learner = Learner.builder().firstName("John").lastName("Wick").email("johnwick@continental.com")
+                .contact_num("12345678").build();
+
+        int learnerId = 10;
+        when(learnerRepository.findById(learnerId)).thenReturn(Optional.of(learner));
+
+        // 2. EXECUTE
+        Learner retrievedLearner = learnerServiceImpl.getLearner(learnerId);
+
+        // 3. ASSERT
+        assertEquals(learner, retrievedLearner);
+    }
+
+    @Test
+    void testGetLearnerNotFound() {
+        int learnerId = 11;
+        when(learnerRepository.findById(learnerId)).thenReturn(Optional.empty());
+
+        assertThrows(LearnerNotFoundException.class, () -> learnerServiceImpl.getLearner(learnerId));
+    }
+
+}

@@ -60,32 +60,9 @@ jobs:
       - snyk/scan:
           docker-image-name: $DOCKERHUB_USERNAME/simple-library:latest
           severity-threshold: critical   
-
-
-    # steps:
-    #   - checkout
-      # - setup_remote_docker
-      # - run:
-      #     name: Login to Docker Hub
-      #     command: echo $DOCKERHUB_TOKEN | docker login -u $DOCKERHUB_USERNAME --password-stdin
-      # - run: 
-      #     name: Create Database
-      #     command: |
-      #       dockerize -wait tcp://localhost:5432 -timeout 1m
-          # psql -h localhost -U myuser -d postgres -c "CREATE DATABASE simple_library;"
+   
            
-      # - run:
-      #     name: Install Dockerize
-      #     command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-      #     environment:
-      #       DOCKERIZE_VERSION: v0.6.1
-      # - run:
-      #     name: Setting up Db
-      #     command: |
-      #       dockerize -wait tcp://localhost:5432 -timeout 1m   
-      #       sudo apt-get update
-      #       sudo apt-get install -y postgresql-client    
-      #       psql -U postgres -c "CREATE DATABASE simple_library;"         
+          
         
 
            

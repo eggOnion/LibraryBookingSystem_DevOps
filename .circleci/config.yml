@@ -23,11 +23,11 @@ jobs:
     docker:
       - image: cimg/openjdk:17.0.7
       - image: cimg/postgres:13.13
-        # environment:
-        #   POSTGRES_URL: ${POSTGRES_URL}
-        #   POSTGRES_USER: ${DB_USERNAME}
-        #   POSTGRES_PASSWORD: ${DB_PASSWORD}
-        #   POSTGRES_DB: d624huihau29c9
+        environment:
+          POSTGRES_URL: ${POSTGRES_URL}
+          # POSTGRES_USER: ${DB_USERNAME}
+          # POSTGRES_PASSWORD: ${DB_PASSWORD}
+          # POSTGRES_DB: d624huihau29c9
     steps:
       - checkout
       - run: 

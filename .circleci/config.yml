@@ -36,7 +36,10 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: 
           name: Run Unit Test & Clean Install
-          command: mvn clean install
+          command: |
+            mvn clean package -DskipTests
+            sleep 10
+            mvn test
 
   scan:
     docker:

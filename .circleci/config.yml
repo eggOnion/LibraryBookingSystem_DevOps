@@ -23,12 +23,12 @@ jobs:
     docker:
       - image: cimg/openjdk:17.0.7
       - image: cimg/postgres:13.13
-        environment:
-          POSTGRES_PORT: ${PORT}
-          POSTGRES_URL: ${POSTGRES_URL}
-          POSTGRES_USER: ${DB_USERNAME}
-          POSTGRES_PASSWORD: ${DB_PASSWORD}
-          POSTGRES_DB: ${DB_NAME}
+        # environment:
+        #   POSTGRES_PORT: ${PORT}
+        #   POSTGRES_URL: ${POSTGRES_URL}
+        #   POSTGRES_USER: ${DB_USERNAME}
+        #   POSTGRES_PASSWORD: ${DB_PASSWORD}
+        #   POSTGRES_DB: ${DB_NAME}
     steps:
       - checkout
       - run: 
@@ -61,11 +61,7 @@ jobs:
           docker-image-name: $DOCKERHUB_USERNAME/simple-library:latest
           severity-threshold: critical   
    
-           
-          
         
-
-           
   # build-and-test:   
   #   docker:
   #     - image: cimg/openjdk:17.0

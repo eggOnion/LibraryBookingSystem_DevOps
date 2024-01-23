@@ -37,7 +37,7 @@ jobs:
       - run: 
           name: Run Unit Test & Clean Install
           command: |
-            mvn clean install           
+            mvn test           
 
   scan:
     docker:

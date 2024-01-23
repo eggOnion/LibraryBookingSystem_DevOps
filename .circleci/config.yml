@@ -61,8 +61,7 @@ jobs:
       - snyk/scan:
           docker-image-name: $DOCKERHUB_USERNAME/simple-library:latest
           severity-threshold: critical   
-   
-        
+           
   # build-and-test:   
   #   docker:
   #     - image: cimg/openjdk:17.0

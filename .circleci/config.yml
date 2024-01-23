@@ -4,7 +4,7 @@ version: 2.1
 orbs:
   # maven: circleci/maven@1.4.1
   # java-build: expi/java-build@1.0.0
-  docker: circleci/docker@2.4.0
+  docker: circleci/docker@2.5.0
   snyk: snyk/snyk@1.5.0
 
 # This job uses a Docker image: "cimg/openjdk:17.0.7" to build a Spring Boot application. 

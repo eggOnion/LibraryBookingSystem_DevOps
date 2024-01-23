@@ -18,8 +18,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.http.MediaType;
 
+@SpringBootTest
 @AutoConfigureMockMvc
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //@ContextConfiguration(locations = "webapp/WEB-INF/application-context.xml")
 public class LearnerControllerTest {
 

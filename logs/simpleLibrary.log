@@ -1,486 +1,100 @@
-2024-01-20T00:36:27.757+08:00  INFO 229750 --- [main] c.e.l.controllers.BookControllerTest     : Starting BookControllerTest using Java 17.0.8 with PID 229750 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:36:27.763+08:00  INFO 229750 --- [main] c.e.l.controllers.BookControllerTest     : The following 1 profile is active: "dev"
-2024-01-20T00:36:28.466+08:00  INFO 229750 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:36:28.520+08:00  INFO 229750 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:36:29.044+08:00  INFO 229750 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2024-01-20T00:36:29.051+08:00  INFO 229750 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-20T00:36:29.052+08:00  INFO 229750 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-20T00:36:29.120+08:00  INFO 229750 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-20T00:36:29.120+08:00  INFO 229750 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1343 ms
-2024-01-20T00:36:29.356+08:00  INFO 229750 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:36:29.397+08:00  INFO 229750 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
-2024-01-20T00:36:29.398+08:00  INFO 229750 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-20T00:36:29.592+08:00  INFO 229750 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:36:29.623+08:00  INFO 229750 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T00:36:29.933+08:00  INFO 229750 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6866e740
-2024-01-20T00:36:29.935+08:00  INFO 229750 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-20T00:36:29.965+08:00  WARN 229750 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:36:30.761+08:00  INFO 229750 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:36:30.867+08:00  INFO 229750 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:36:31.418+08:00  WARN 229750 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:36:31.811+08:00  INFO 229750 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:36:31.846+08:00  INFO 229750 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48971262, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19d043a8, org.springframework.security.web.context.SecurityContextHolderFilter@644eed73, org.springframework.security.web.header.HeaderWriterFilter@344eaf7e, org.springframework.security.web.authentication.logout.LogoutFilter@37ecc472, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@42626e86, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@834529e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14f8fdae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75f67fe5, org.springframework.security.web.access.ExceptionTranslationFilter@500d4de8, org.springframework.security.web.access.intercept.AuthorizationFilter@20305c45]
-2024-01-20T00:36:32.035+08:00  INFO 229750 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
-2024-01-20T00:36:32.036+08:00  INFO 229750 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-01-20T00:36:32.037+08:00  INFO 229750 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2024-01-20T00:36:32.106+08:00  INFO 229750 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 40939 (http) with context path ''
-2024-01-20T00:36:32.117+08:00  INFO 229750 --- [main] c.e.l.controllers.BookControllerTest     : Started BookControllerTest in 4.619 seconds (process running for 5.366)
-2024-01-20T00:36:33.299+08:00  INFO 229750 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LoadPeriodControllerTest]: LoadPeriodControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:36:33.302+08:00  INFO 229750 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LoadPeriodControllerTest
-2024-01-20T00:36:33.508+08:00  INFO 229750 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LearnerControllerTest]: LearnerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:36:33.512+08:00  INFO 229750 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LearnerControllerTest
-2024-01-20T00:36:33.922+08:00  INFO 229750 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.LibrarybookingsystemApplicationTests]: LibrarybookingsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:36:33.927+08:00  INFO 229750 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.LibrarybookingsystemApplicationTests
-2024-01-20T00:36:33.933+08:00  INFO 229750 --- [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
-2024-01-20T00:36:33.953+08:00  INFO 229750 --- [main] e.l.LibrarybookingsystemApplicationTests : Starting LibrarybookingsystemApplicationTests using Java 17.0.8 with PID 229750 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:36:33.954+08:00  INFO 229750 --- [main] e.l.LibrarybookingsystemApplicationTests : The following 1 profile is active: "dev"
-2024-01-20T00:36:34.141+08:00  INFO 229750 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:36:34.148+08:00  INFO 229750 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:36:34.231+08:00  INFO 229750 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:36:34.236+08:00  INFO 229750 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:36:34.237+08:00  INFO 229750 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-01-20T00:36:34.254+08:00  INFO 229750 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1df1bd44
-2024-01-20T00:36:34.254+08:00  INFO 229750 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-01-20T00:36:34.259+08:00  WARN 229750 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:36:34.339+08:00  INFO 229750 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:36:34.441+08:00  INFO 229750 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:36:34.606+08:00  WARN 229750 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:36:34.767+08:00  INFO 229750 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:36:34.784+08:00  INFO 229750 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27cd156a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4af44e42, org.springframework.security.web.context.SecurityContextHolderFilter@140e2d82, org.springframework.security.web.header.HeaderWriterFilter@4ab4b4cd, org.springframework.security.web.authentication.logout.LogoutFilter@2db618e3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3a2173cd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5989f463, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27cc84a2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37a522c8, org.springframework.security.web.access.ExceptionTranslationFilter@83ec0b0, org.springframework.security.web.access.intercept.AuthorizationFilter@7820a19d]
-2024-01-20T00:36:34.872+08:00  INFO 229750 --- [main] e.l.LibrarybookingsystemApplicationTests : Started LibrarybookingsystemApplicationTests in 0.939 seconds (process running for 8.121)
-2024-01-20T00:36:34.910+08:00  INFO 229750 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:36:34.912+08:00  INFO 229750 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-20T00:36:34.924+08:00  INFO 229750 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-20T00:36:34.928+08:00  INFO 229750 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:36:34.929+08:00  INFO 229750 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-01-20T00:36:34.936+08:00  INFO 229750 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-01-20T00:38:07.410+08:00  INFO 230726 --- [main] c.e.l.controllers.BookControllerTest     : Starting BookControllerTest using Java 17.0.8 with PID 230726 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:38:07.412+08:00  INFO 230726 --- [main] c.e.l.controllers.BookControllerTest     : The following 1 profile is active: "dev"
-2024-01-20T00:38:08.085+08:00  INFO 230726 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:38:08.138+08:00  INFO 230726 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:38:08.630+08:00  INFO 230726 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2024-01-20T00:38:08.637+08:00  INFO 230726 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-20T00:38:08.638+08:00  INFO 230726 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-20T00:38:08.719+08:00  INFO 230726 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-20T00:38:08.720+08:00  INFO 230726 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1296 ms
-2024-01-20T00:38:08.961+08:00  INFO 230726 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:38:08.998+08:00  INFO 230726 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
-2024-01-20T00:38:09.000+08:00  INFO 230726 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-20T00:38:09.190+08:00  INFO 230726 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:38:09.214+08:00  INFO 230726 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T00:38:09.484+08:00  INFO 230726 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1280bae3
-2024-01-20T00:38:09.493+08:00  INFO 230726 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-20T00:38:09.523+08:00  WARN 230726 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:38:10.265+08:00  INFO 230726 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:38:10.359+08:00  INFO 230726 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:10.898+08:00  WARN 230726 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:38:11.287+08:00  INFO 230726 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:38:11.341+08:00  INFO 230726 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e157f48, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37e9d191, org.springframework.security.web.context.SecurityContextHolderFilter@3a2b1f24, org.springframework.security.web.header.HeaderWriterFilter@24032706, org.springframework.security.web.authentication.logout.LogoutFilter@618d2191, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@72557e0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1314ccc1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5988e36e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53a3ccc, org.springframework.security.web.access.ExceptionTranslationFilter@521032a6, org.springframework.security.web.access.intercept.AuthorizationFilter@32fb4a87]
-2024-01-20T00:38:11.522+08:00  INFO 230726 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
-2024-01-20T00:38:11.523+08:00  INFO 230726 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-01-20T00:38:11.524+08:00  INFO 230726 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2024-01-20T00:38:11.579+08:00  INFO 230726 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 41189 (http) with context path ''
-2024-01-20T00:38:11.591+08:00  INFO 230726 --- [main] c.e.l.controllers.BookControllerTest     : Started BookControllerTest in 4.446 seconds (process running for 5.18)
-2024-01-20T00:38:12.799+08:00  INFO 230726 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LoadPeriodControllerTest]: LoadPeriodControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:12.802+08:00  INFO 230726 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LoadPeriodControllerTest
-2024-01-20T00:38:13.012+08:00  INFO 230726 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LearnerControllerTest]: LearnerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:13.015+08:00  INFO 230726 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LearnerControllerTest
-2024-01-20T00:38:13.493+08:00  INFO 230726 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.LibrarybookingsystemApplicationTests]: LibrarybookingsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:13.497+08:00  INFO 230726 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.LibrarybookingsystemApplicationTests
-2024-01-20T00:38:13.504+08:00  INFO 230726 --- [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
-2024-01-20T00:38:13.529+08:00  INFO 230726 --- [main] e.l.LibrarybookingsystemApplicationTests : Starting LibrarybookingsystemApplicationTests using Java 17.0.8 with PID 230726 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:38:13.530+08:00  INFO 230726 --- [main] e.l.LibrarybookingsystemApplicationTests : The following 1 profile is active: "dev"
-2024-01-20T00:38:13.765+08:00  INFO 230726 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:38:13.775+08:00  INFO 230726 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:38:13.870+08:00  INFO 230726 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:38:13.874+08:00  INFO 230726 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:38:13.875+08:00  INFO 230726 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-01-20T00:38:13.897+08:00  INFO 230726 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@1a6864f0
-2024-01-20T00:38:13.898+08:00  INFO 230726 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-01-20T00:38:13.904+08:00  WARN 230726 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:38:14.009+08:00  INFO 230726 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:38:14.109+08:00  INFO 230726 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:14.292+08:00  WARN 230726 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:38:14.463+08:00  INFO 230726 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:38:14.475+08:00  INFO 230726 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ce15aa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3dabf112, org.springframework.security.web.context.SecurityContextHolderFilter@2b9132ad, org.springframework.security.web.header.HeaderWriterFilter@28908c04, org.springframework.security.web.authentication.logout.LogoutFilter@652a16a8, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3564caf8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7adc8212, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b50017c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e3f38c1, org.springframework.security.web.access.ExceptionTranslationFilter@1490b1a4, org.springframework.security.web.access.intercept.AuthorizationFilter@104861ff]
-2024-01-20T00:38:14.575+08:00  INFO 230726 --- [main] e.l.LibrarybookingsystemApplicationTests : Started LibrarybookingsystemApplicationTests in 1.071 seconds (process running for 8.164)
-2024-01-20T00:38:14.614+08:00  INFO 230726 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:14.618+08:00  INFO 230726 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-20T00:38:14.630+08:00  INFO 230726 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-20T00:38:14.636+08:00  INFO 230726 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:14.637+08:00  INFO 230726 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-01-20T00:38:14.644+08:00  INFO 230726 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-01-20T00:38:47.299+08:00  INFO 231244 --- [main] c.e.l.controllers.BookControllerTest     : Starting BookControllerTest using Java 17.0.8 with PID 231244 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:38:47.300+08:00  INFO 231244 --- [main] c.e.l.controllers.BookControllerTest     : The following 1 profile is active: "dev"
-2024-01-20T00:38:47.980+08:00  INFO 231244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:38:48.027+08:00  INFO 231244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:38:48.553+08:00  INFO 231244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2024-01-20T00:38:48.561+08:00  INFO 231244 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-20T00:38:48.561+08:00  INFO 231244 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-20T00:38:48.630+08:00  INFO 231244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-20T00:38:48.630+08:00  INFO 231244 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1318 ms
-2024-01-20T00:38:48.886+08:00  INFO 231244 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:38:48.936+08:00  INFO 231244 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
-2024-01-20T00:38:48.939+08:00  INFO 231244 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-20T00:38:49.184+08:00  INFO 231244 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:38:49.205+08:00  INFO 231244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T00:38:49.518+08:00  INFO 231244 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@131777e8
-2024-01-20T00:38:49.519+08:00  INFO 231244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-20T00:38:49.548+08:00  WARN 231244 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:38:50.347+08:00  INFO 231244 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:38:50.452+08:00  INFO 231244 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:50.957+08:00  WARN 231244 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:38:51.410+08:00  INFO 231244 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:38:51.452+08:00  INFO 231244 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27ca8a5a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62604ed4, org.springframework.security.web.context.SecurityContextHolderFilter@609f136b, org.springframework.security.web.header.HeaderWriterFilter@3a2b1f24, org.springframework.security.web.authentication.logout.LogoutFilter@1c12f0f4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6e157f48, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c4f48e2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2acbbee4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1bfc6e50, org.springframework.security.web.access.ExceptionTranslationFilter@3e455d01, org.springframework.security.web.access.intercept.AuthorizationFilter@76ac3ad0]
-2024-01-20T00:38:51.665+08:00  INFO 231244 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
-2024-01-20T00:38:51.665+08:00  INFO 231244 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-01-20T00:38:51.667+08:00  INFO 231244 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2024-01-20T00:38:51.736+08:00  INFO 231244 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 33143 (http) with context path ''
-2024-01-20T00:38:51.754+08:00  INFO 231244 --- [main] c.e.l.controllers.BookControllerTest     : Started BookControllerTest in 4.703 seconds (process running for 5.543)
-2024-01-20T00:38:52.929+08:00  INFO 231244 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LoadPeriodControllerTest]: LoadPeriodControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:52.932+08:00  INFO 231244 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LoadPeriodControllerTest
-2024-01-20T00:38:53.112+08:00  INFO 231244 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LearnerControllerTest]: LearnerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:53.116+08:00  INFO 231244 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LearnerControllerTest
-2024-01-20T00:38:53.510+08:00  INFO 231244 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.LibrarybookingsystemApplicationTests]: LibrarybookingsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-20T00:38:53.514+08:00  INFO 231244 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.LibrarybookingsystemApplicationTests
-2024-01-20T00:38:53.519+08:00  INFO 231244 --- [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
-2024-01-20T00:38:53.538+08:00  INFO 231244 --- [main] e.l.LibrarybookingsystemApplicationTests : Starting LibrarybookingsystemApplicationTests using Java 17.0.8 with PID 231244 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T00:38:53.539+08:00  INFO 231244 --- [main] e.l.LibrarybookingsystemApplicationTests : The following 1 profile is active: "dev"
-2024-01-20T00:38:53.737+08:00  INFO 231244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T00:38:53.744+08:00  INFO 231244 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
-2024-01-20T00:38:53.815+08:00  INFO 231244 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T00:38:53.819+08:00  INFO 231244 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T00:38:53.819+08:00  INFO 231244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-01-20T00:38:53.840+08:00  INFO 231244 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@654be52b
-2024-01-20T00:38:53.840+08:00  INFO 231244 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-01-20T00:38:53.845+08:00  WARN 231244 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T00:38:53.917+08:00  INFO 231244 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T00:38:54.007+08:00  INFO 231244 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:54.158+08:00  WARN 231244 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T00:38:54.322+08:00  INFO 231244 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T00:38:54.330+08:00  INFO 231244 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72ce2982, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d5399f4, org.springframework.security.web.context.SecurityContextHolderFilter@6845dfcc, org.springframework.security.web.header.HeaderWriterFilter@26be5ee, org.springframework.security.web.authentication.logout.LogoutFilter@78835956, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10658b31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5415ed48, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@636787fd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1490b1a4, org.springframework.security.web.access.ExceptionTranslationFilter@5e6d2502, org.springframework.security.web.access.intercept.AuthorizationFilter@5c00b341]
-2024-01-20T00:38:54.412+08:00  INFO 231244 --- [main] e.l.LibrarybookingsystemApplicationTests : Started LibrarybookingsystemApplicationTests in 0.892 seconds (process running for 8.201)
-2024-01-20T00:38:54.444+08:00  INFO 231244 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:54.445+08:00  INFO 231244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-20T00:38:54.454+08:00  INFO 231244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-01-20T00:38:54.459+08:00  INFO 231244 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T00:38:54.460+08:00  INFO 231244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-01-20T00:38:54.467+08:00  INFO 231244 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-01-20T16:38:18.408+08:00  INFO 123054 --- [restartedMain] c.e.l.LibrarybookingsystemApplication    : Starting LibrarybookingsystemApplication using Java 17.0.8 with PID 123054 (/home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps/target/classes started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T16:38:18.409+08:00  INFO 123054 --- [restartedMain] c.e.l.LibrarybookingsystemApplication    : The following 1 profile is active: "dev"
-2024-01-20T16:38:18.445+08:00  INFO 123054 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-01-20T16:38:18.446+08:00  INFO 123054 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-01-20T16:38:18.910+08:00  INFO 123054 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T16:38:18.956+08:00  INFO 123054 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 3 JPA repository interfaces.
-2024-01-20T16:38:19.300+08:00  INFO 123054 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-01-20T16:38:19.306+08:00  INFO 123054 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-20T16:38:19.307+08:00  INFO 123054 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-20T16:38:19.345+08:00  INFO 123054 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-20T16:38:19.345+08:00  INFO 123054 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 899 ms
-2024-01-20T16:38:19.470+08:00  INFO 123054 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T16:38:19.495+08:00  INFO 123054 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
-2024-01-20T16:38:19.497+08:00  INFO 123054 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-20T16:38:19.615+08:00  INFO 123054 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T16:38:19.641+08:00  INFO 123054 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T16:38:20.829+08:00 ERROR 123054 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-org.postgresql.util.PSQLException: FATAL: password authentication failed for user "${POSTGRES_USERNAME}"
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:279) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:193) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:69) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:216) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:231) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:199) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1321) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1310) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at com.example.librarybookingsystem.LibrarybookingsystemApplication.main(LibrarybookingsystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-
-2024-01-20T16:38:20.834+08:00  WARN 123054 --- [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
-
-java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:279) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:193) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:69) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:119) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:239) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:216) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:231) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:199) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1321) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1310) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at com.example.librarybookingsystem.LibrarybookingsystemApplication.main(LibrarybookingsystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-
-2024-01-20T16:38:20.844+08:00  WARN 123054 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T16:38:21.292+08:00  INFO 123054 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T16:38:21.299+08:00  INFO 123054 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T16:38:22.321+08:00 ERROR 123054 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
-
-org.postgresql.util.PSQLException: FATAL: password authentication failed for user "${POSTGRES_USERNAME}"
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.getIsolatedConnection(GenerationTargetToDatabase.java:60) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:112) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:79) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:455) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:242) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:215) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:185) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:155) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:115) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:242) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:293) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1458) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1321) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1310) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at com.example.librarybookingsystem.LibrarybookingsystemApplication.main(LibrarybookingsystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-
-2024-01-20T16:38:22.326+08:00  WARN 123054 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 28P01
-2024-01-20T16:38:22.326+08:00 ERROR 123054 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : FATAL: password authentication failed for user "${POSTGRES_USERNAME}"
-2024-01-20T16:38:22.330+08:00 ERROR 123054 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "${POSTGRES_USERNAME}"] [n/a]
-2024-01-20T16:38:22.330+08:00  WARN 123054 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "${POSTGRES_USERNAME}"] [n/a]
-2024-01-20T16:38:22.332+08:00  INFO 123054 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-01-20T16:38:22.348+08:00  INFO 123054 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-01-20T16:38:22.357+08:00 ERROR 123054 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "${POSTGRES_USERNAME}"] [n/a]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616) ~[spring-context-6.0.15.jar:6.0.15]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1321) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1310) ~[spring-boot-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-	at com.example.librarybookingsystem.LibrarybookingsystemApplication.main(LibrarybookingsystemApplication.java:10) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.7-SNAPSHOT.jar:3.1.7-SNAPSHOT]
-Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "${POSTGRES_USERNAME}"] [n/a]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-6.0.15.jar:6.0.15]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764) ~[spring-beans-6.0.15.jar:6.0.15]
-	... 21 common frames omitted
-Caused by: org.hibernate.exception.GenericJDBCException: Unable to open JDBC Connection for DDL execution [FATAL: password authentication failed for user "${POSTGRES_USERNAME}"] [n/a]
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:61) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.getIsolatedConnection(GenerationTargetToDatabase.java:60) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.jdbcStatement(GenerationTargetToDatabase.java:112) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:79) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:455) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropConstraintsTablesSequences(SchemaDropperImpl.java:242) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:215) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:185) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:155) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:115) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:242) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:293) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1458) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.15.jar:6.0.15]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.15.jar:6.0.15]
-	... 25 common frames omitted
-Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "${POSTGRES_USERNAME}"
-	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:693) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:203) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.makeConnection(Driver.java:443) ~[postgresql-42.6.0.jar:42.6.0]
-	at org.postgresql.Driver.connect(Driver.java:297) ~[postgresql-42.6.0.jar:42.6.0]
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100) ~[HikariCP-5.0.1.jar:na]
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-5.0.1.jar:na]
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:437) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.2.17.Final.jar:6.2.17.Final]
-	... 48 common frames omitted
-
-2024-01-20T16:39:41.548+08:00  INFO 123861 --- [restartedMain] c.e.l.LibrarybookingsystemApplication    : Starting LibrarybookingsystemApplication using Java 17.0.8 with PID 123861 (/home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps/target/classes started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
-2024-01-20T16:39:41.549+08:00  INFO 123861 --- [restartedMain] c.e.l.LibrarybookingsystemApplication    : The following 1 profile is active: "dev"
-2024-01-20T16:39:41.582+08:00  INFO 123861 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-01-20T16:39:41.583+08:00  INFO 123861 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-01-20T16:39:42.038+08:00  INFO 123861 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-01-20T16:39:42.085+08:00  INFO 123861 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
-2024-01-20T16:39:42.409+08:00  INFO 123861 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2024-01-20T16:39:42.416+08:00  INFO 123861 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-01-20T16:39:42.416+08:00  INFO 123861 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
-2024-01-20T16:39:42.450+08:00  INFO 123861 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-01-20T16:39:42.450+08:00  INFO 123861 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 867 ms
-2024-01-20T16:39:42.569+08:00  INFO 123861 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-01-20T16:39:42.594+08:00  INFO 123861 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
-2024-01-20T16:39:42.595+08:00  INFO 123861 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2024-01-20T16:39:42.711+08:00  INFO 123861 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-01-20T16:39:42.735+08:00  INFO 123861 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-01-20T16:39:42.899+08:00  INFO 123861 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68fd1273
-2024-01-20T16:39:42.900+08:00  INFO 123861 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-01-20T16:39:42.931+08:00  WARN 123861 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-01-20T16:39:43.424+08:00  INFO 123861 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-01-20T16:39:43.559+08:00  INFO 123861 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T16:39:43.904+08:00  WARN 123861 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-01-20T16:39:44.141+08:00  INFO 123861 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2024-01-20T16:39:44.171+08:00  INFO 123861 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ffe1cff, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b44ee0a, org.springframework.security.web.context.SecurityContextHolderFilter@3fb3448e, org.springframework.security.web.header.HeaderWriterFilter@3434c99, org.springframework.security.web.authentication.logout.LogoutFilter@2336d76c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@44620193, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@471743bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d514da6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b483095, org.springframework.security.web.access.ExceptionTranslationFilter@7c770114, org.springframework.security.web.access.intercept.AuthorizationFilter@d323c8c]
-2024-01-20T16:39:44.303+08:00  INFO 123861 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-01-20T16:39:44.342+08:00  INFO 123861 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2024-01-20T16:39:44.353+08:00  INFO 123861 --- [restartedMain] c.e.l.LibrarybookingsystemApplication    : Started LibrarybookingsystemApplication in 3.016 seconds (process running for 3.217)
-2024-01-20T16:40:23.600+08:00  INFO 123861 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-01-20T16:40:23.600+08:00  INFO 123861 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-01-20T16:40:23.601+08:00  INFO 123861 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2024-01-20T16:43:32.841+08:00  INFO 123861 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-01-20T16:43:32.843+08:00  INFO 123861 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-01-20T16:43:32.848+08:00  INFO 123861 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-23T08:35:19.236+08:00  INFO 35161 --- [main] c.e.l.controllers.BookControllerTest     : Starting BookControllerTest using Java 17.0.8 with PID 35161 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
+2024-01-23T08:35:19.242+08:00  INFO 35161 --- [main] c.e.l.controllers.BookControllerTest     : The following 1 profile is active: "dev"
+2024-01-23T08:35:20.386+08:00  INFO 35161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-23T08:35:20.451+08:00  INFO 35161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
+2024-01-23T08:35:20.956+08:00  INFO 35161 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-23T08:35:21.001+08:00  INFO 35161 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-23T08:35:21.004+08:00  INFO 35161 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-01-23T08:35:21.212+08:00  INFO 35161 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-23T08:35:21.234+08:00  INFO 35161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-23T08:35:21.582+08:00  INFO 35161 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72a3462f
+2024-01-23T08:35:21.585+08:00  INFO 35161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-23T08:35:21.613+08:00  WARN 35161 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-23T08:35:22.433+08:00  INFO 35161 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-23T08:35:22.579+08:00  INFO 35161 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T08:35:23.307+08:00  WARN 35161 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-23T08:35:23.762+08:00  INFO 35161 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-01-23T08:35:23.815+08:00  INFO 35161 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1297cf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37e15055, org.springframework.security.web.context.SecurityContextHolderFilter@4583a186, org.springframework.security.web.header.HeaderWriterFilter@11703cc8, org.springframework.security.web.authentication.logout.LogoutFilter@5e2ab1c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@726882da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7843b65e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fcae085, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57d1edf0, org.springframework.security.web.access.ExceptionTranslationFilter@7bf3bf2e, org.springframework.security.web.access.intercept.AuthorizationFilter@6c7bc8ac]
+2024-01-23T08:35:24.145+08:00  INFO 35161 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-01-23T08:35:24.146+08:00  INFO 35161 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-01-23T08:35:24.148+08:00  INFO 35161 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-01-23T08:35:24.212+08:00  INFO 35161 --- [main] c.e.l.controllers.BookControllerTest     : Started BookControllerTest in 5.279 seconds (process running for 6.213)
+2024-01-23T08:35:25.658+08:00  INFO 35161 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LoadPeriodControllerTest]: LoadPeriodControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T08:35:25.665+08:00  INFO 35161 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LoadPeriodControllerTest
+2024-01-23T08:35:25.922+08:00  INFO 35161 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LearnerControllerTest]: LearnerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T08:35:25.925+08:00  INFO 35161 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LearnerControllerTest
+2024-01-23T08:35:26.462+08:00  INFO 35161 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.LibrarybookingsystemApplicationTests]: LibrarybookingsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T08:35:26.470+08:00  INFO 35161 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.LibrarybookingsystemApplicationTests
+2024-01-23T08:35:26.475+08:00  INFO 35161 --- [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-01-23T08:35:26.497+08:00  INFO 35161 --- [main] e.l.LibrarybookingsystemApplicationTests : Starting LibrarybookingsystemApplicationTests using Java 17.0.8 with PID 35161 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
+2024-01-23T08:35:26.498+08:00  INFO 35161 --- [main] e.l.LibrarybookingsystemApplicationTests : The following 1 profile is active: "dev"
+2024-01-23T08:35:26.779+08:00  INFO 35161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-23T08:35:26.800+08:00  INFO 35161 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2024-01-23T08:35:26.993+08:00  INFO 35161 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-23T08:35:27.002+08:00  INFO 35161 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-23T08:35:27.004+08:00  INFO 35161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-23T08:35:27.033+08:00  INFO 35161 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5efb7f82
+2024-01-23T08:35:27.034+08:00  INFO 35161 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-23T08:35:27.041+08:00  WARN 35161 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-23T08:35:27.153+08:00  INFO 35161 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-23T08:35:27.251+08:00  INFO 35161 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T08:35:27.448+08:00  WARN 35161 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-23T08:35:27.617+08:00  INFO 35161 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-01-23T08:35:27.630+08:00  INFO 35161 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f453412, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14426256, org.springframework.security.web.context.SecurityContextHolderFilter@574ffd63, org.springframework.security.web.header.HeaderWriterFilter@46b2e0e4, org.springframework.security.web.authentication.logout.LogoutFilter@250988e5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3662dc9b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@344ab465, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ce1b67b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17aa06eb, org.springframework.security.web.access.ExceptionTranslationFilter@67dc7d0, org.springframework.security.web.access.intercept.AuthorizationFilter@1502cd38]
+2024-01-23T08:35:27.721+08:00  INFO 35161 --- [main] e.l.LibrarybookingsystemApplicationTests : Started LibrarybookingsystemApplicationTests in 1.246 seconds (process running for 9.722)
+2024-01-23T08:35:27.742+08:00  INFO 35161 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T08:35:27.746+08:00  INFO 35161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-23T08:35:27.757+08:00  INFO 35161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-23T08:35:27.763+08:00  INFO 35161 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T08:35:27.764+08:00  INFO 35161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-23T08:35:27.775+08:00  INFO 35161 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-01-23T10:47:35.387+08:00  INFO 93829 --- [main] c.e.l.controllers.BookControllerTest     : Starting BookControllerTest using Java 17.0.8 with PID 93829 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
+2024-01-23T10:47:35.389+08:00  INFO 93829 --- [main] c.e.l.controllers.BookControllerTest     : The following 1 profile is active: "dev"
+2024-01-23T10:47:36.022+08:00  INFO 93829 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-23T10:47:36.065+08:00  INFO 93829 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
+2024-01-23T10:47:36.456+08:00  INFO 93829 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-23T10:47:36.495+08:00  INFO 93829 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-23T10:47:36.498+08:00  INFO 93829 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2024-01-23T10:47:36.690+08:00  INFO 93829 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-23T10:47:36.707+08:00  INFO 93829 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-23T10:47:36.965+08:00  INFO 93829 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@71fb8301
+2024-01-23T10:47:36.967+08:00  INFO 93829 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-23T10:47:36.990+08:00  WARN 93829 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-23T10:47:37.716+08:00  INFO 93829 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-23T10:47:37.846+08:00  INFO 93829 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T10:47:38.399+08:00  WARN 93829 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-23T10:47:38.802+08:00  INFO 93829 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-01-23T10:47:38.849+08:00  INFO 93829 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@59bf79f3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c663fda, org.springframework.security.web.context.SecurityContextHolderFilter@7a458c73, org.springframework.security.web.header.HeaderWriterFilter@581cb879, org.springframework.security.web.authentication.logout.LogoutFilter@513fb873, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3284f91f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@112f8f8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f6ede9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f1d5f3, org.springframework.security.web.access.ExceptionTranslationFilter@360ccb68, org.springframework.security.web.access.intercept.AuthorizationFilter@221961f2]
+2024-01-23T10:47:39.094+08:00  INFO 93829 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-01-23T10:47:39.095+08:00  INFO 93829 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-01-23T10:47:39.096+08:00  INFO 93829 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-01-23T10:47:39.150+08:00  INFO 93829 --- [main] c.e.l.controllers.BookControllerTest     : Started BookControllerTest in 3.989 seconds (process running for 4.741)
+2024-01-23T10:47:40.188+08:00  INFO 93829 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LoadPeriodControllerTest]: LoadPeriodControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T10:47:40.192+08:00  INFO 93829 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LoadPeriodControllerTest
+2024-01-23T10:47:40.365+08:00  INFO 93829 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.controllers.LearnerControllerTest]: LearnerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T10:47:40.367+08:00  INFO 93829 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.controllers.LearnerControllerTest
+2024-01-23T10:47:40.718+08:00  INFO 93829 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.librarybookingsystem.LibrarybookingsystemApplicationTests]: LibrarybookingsystemApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-23T10:47:40.722+08:00  INFO 93829 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.librarybookingsystem.LibrarybookingsystemApplication for test class com.example.librarybookingsystem.LibrarybookingsystemApplicationTests
+2024-01-23T10:47:40.726+08:00  INFO 93829 --- [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-01-23T10:47:40.743+08:00  INFO 93829 --- [main] e.l.LibrarybookingsystemApplicationTests : Starting LibrarybookingsystemApplicationTests using Java 17.0.8 with PID 93829 (started by linux in /home/linux/NTU/Module 4/SCTP DevOps Project/LibraryBookingSystem_DevOps)
+2024-01-23T10:47:40.743+08:00  INFO 93829 --- [main] e.l.LibrarybookingsystemApplicationTests : The following 1 profile is active: "dev"
+2024-01-23T10:47:40.921+08:00  INFO 93829 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-23T10:47:40.930+08:00  INFO 93829 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2024-01-23T10:47:40.998+08:00  INFO 93829 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-23T10:47:41.002+08:00  INFO 93829 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-23T10:47:41.003+08:00  INFO 93829 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-01-23T10:47:41.016+08:00  INFO 93829 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@249f95a2
+2024-01-23T10:47:41.016+08:00  INFO 93829 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-01-23T10:47:41.022+08:00  WARN 93829 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-23T10:47:41.087+08:00  INFO 93829 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-23T10:47:41.162+08:00  INFO 93829 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T10:47:41.298+08:00  WARN 93829 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-23T10:47:41.442+08:00  INFO 93829 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-01-23T10:47:41.452+08:00  INFO 93829 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@250988e5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4481f9bd, org.springframework.security.web.context.SecurityContextHolderFilter@18a129b8, org.springframework.security.web.header.HeaderWriterFilter@d89b0d3, org.springframework.security.web.authentication.logout.LogoutFilter@574ffd63, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@d05d8c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cc655a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67dc7d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1502cd38, org.springframework.security.web.access.ExceptionTranslationFilter@7f9f3516, org.springframework.security.web.access.intercept.AuthorizationFilter@5ce1b67b]
+2024-01-23T10:47:41.515+08:00  INFO 93829 --- [main] e.l.LibrarybookingsystemApplicationTests : Started LibrarybookingsystemApplicationTests in 0.789 seconds (process running for 7.105)
+2024-01-23T10:47:41.533+08:00  INFO 93829 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T10:47:41.536+08:00  INFO 93829 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-01-23T10:47:41.548+08:00  INFO 93829 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-01-23T10:47:41.553+08:00  INFO 93829 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-23T10:47:41.553+08:00  INFO 93829 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-01-23T10:47:41.560+08:00  INFO 93829 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

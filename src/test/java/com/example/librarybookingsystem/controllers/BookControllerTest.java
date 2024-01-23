@@ -24,9 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //import org.apache.tomcat.util.http.parser.MediaType;
 import org.springframework.http.MediaType;
 
-//@SpringBootTest
+@SpringBootTest
 @AutoConfigureMockMvc
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BookControllerTest {
 
         @Autowired

@@ -33,7 +33,7 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: Wait for db to run
+          name: Wait for db to be ready
           command: sleep 10
       - run: 
           name: Run Unit Test & Clean Install

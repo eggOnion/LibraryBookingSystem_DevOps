@@ -23,24 +23,22 @@ jobs:
     docker:
       - image: cimg/openjdk:17.0.7
       - image: cimg/postgres:13.13
-        environment:
-          POSTGRES_PORT: ${PORT}
-          POSTGRES_URL: ${POSTGRES_URL}
-          POSTGRES_USER: ${POSTGRES_USERNAME}
-          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-          POSTGRES_DB: ${POSTGRES_NAME}
-          POSTGRES_HOST_AUTH_METHOD: trust
+        # environment:
+        #   POSTGRES_PORT: ${PORT}
+        #   POSTGRES_URL: ${POSTGRES_URL}
+        #   POSTGRES_USER: ${POSTGRES_USERNAME}
+        #   POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        #   POSTGRES_DB: ${POSTGRES_NAME}
+        #   POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
       - run: 
           name: Wait for db to run
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          command: sleep 10
       - run: 
           name: Run Unit Test & Clean Install
           command: |
-            mvn clean package -DskipTests
-            sleep 10
-            mvn test
+            mvn clean install           
 
   scan:
     docker:

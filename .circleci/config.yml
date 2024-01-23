@@ -25,7 +25,7 @@ jobs:
       - image: cimg/postgres:13.13
         environment:
           POSTGRES_PORT: ${PORT}
-          POSTGRES_URL: ${POSTGRES_URL}
+          POSTGRES_URL: ${DB_H_URL}
           POSTGRES_USER: ${POSTGRES_USERNAME}
           POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
           POSTGRES_DB: ${POSTGRES_NAME}

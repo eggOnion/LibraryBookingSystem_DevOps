@@ -21,13 +21,13 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/openjdk:17.0.7
-      - image: cimg/postgres:13.13     
-        environment:
-          POSTGRES_PORT: ${PORT}
-          POSTGRES_URL: ${DB_H_URL}
-          POSTGRES_USER: ${POSTGRES_USERNAME}
-          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-          POSTGRES_DB: ${POSTGRES_NAME}     
+      # - image: cimg/postgres:13.13     
+      #   environment:
+      #     POSTGRES_PORT: ${PORT}
+      #     POSTGRES_URL: ${DB_H_URL}
+      #     POSTGRES_USER: ${POSTGRES_USERNAME}
+      #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      #     POSTGRES_DB: ${POSTGRES_NAME}     
     steps:
       - checkout
       - run: 

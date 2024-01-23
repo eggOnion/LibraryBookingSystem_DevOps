@@ -18,6 +18,7 @@ jobs:
   #         name: Building Image...
   #         command: mvn clean package -DskipTests=true
 
+
   build-and-test:
     docker:
       - image: cimg/openjdk:17.0.7
